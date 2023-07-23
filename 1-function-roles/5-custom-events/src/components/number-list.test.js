@@ -4,7 +4,7 @@ import { numberList } from './number-list.js';
 
 describe('numberList: renders a list of numbers', () => {
     describe('it has no side-effects', () => {
-        it('does not modify the arugment', () => {
+        it('does not modify the argument', () => {
             const arg = [1, 2, 3];
             numberList(arg);
             expect(arg).toEqual([1, 2, 3]);

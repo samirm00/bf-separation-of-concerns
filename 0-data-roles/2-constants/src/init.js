@@ -12,11 +12,11 @@ debugger; // once when the program is initialized
 
 // ==== the user can add a new number to state ====
 
-document.getElementById(INPUT_ID).addEventListener(ADD_EVENT, (event) => {
+document.getElementById(INPUT_ID).addEventListener(ADD_EVENT, (e) => {
     debugger; // each time the user changes the 'next-number' input
 
     // --- read the user's input ---
-    const inputValue = event.target.value;
+    const inputValue = e.target.value;
     const nextNumber = Number(inputValue);
 
     // --- update state ---
@@ -35,16 +35,16 @@ document.getElementById(INPUT_ID).addEventListener(ADD_EVENT, (event) => {
 
 // ==== the user can change the input's value ====
 
-document.getElementById(OUTPUT_ID).addEventListener(UPDATE_EVENT, (event) => {
+document.getElementById(OUTPUT_ID).addEventListener(UPDATE_EVENT, (e) => {
     debugger; // each time the user moves the mouse over 'number-history'
 
     // only do something if the user is hovering over an LI child
-    if (event.target.nodeName !== 'LI') {
+    if (e.target.nodeName !== 'LI') {
         return;
     }
 
     // read the user's input
-    const targetText = event.target.innerText;
+    const targetText = e.target.innerText;
     const userNumber = Number(targetText);
 
     // update state

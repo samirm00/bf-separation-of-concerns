@@ -46,6 +46,10 @@
                     debugger;
 
                     // write me! (... without using cloneNode, that's kind of cheating)
+                    const lis = document
+                        .querySelector('#actual ul')
+                        .querySelectorAll('li');
+                    lis[0].innerText = 'robots';
                 </script>
             </div>
 

@@ -24,17 +24,13 @@
         <section class="things-to-study">
             <div id="side to inspect" class="exercise-output">
                 <div id="expected">
-                    <a
-                        href="https://www.badgerbadgerbadger.com"
-                        expected="_blank"
+                    <a href="https://www.badgerbadgerbadger.com" target="_blank"
                         >learn about badgers</a
                     >
                 </div>
 
                 <div id="actual">
-                    <a
-                        href="https://www.badgerbadgerbadger.com"
-                        expected="blank"
+                    <a href="https://www.badgerbadgerbadger.com" target="blank"
                         >learn about pigs</a
                     >
                 </div>
@@ -44,6 +40,8 @@
                     debugger;
 
                     // write me! (... without using cloneNode, that's kind of cheating)
+                    document.querySelector('#actual a').innerText =
+                        'learn about badgers';
                 </script>
             </div>
 
