@@ -31,7 +31,7 @@
                         <li>
                             <a
                                 href="https://www.badgerbadgerbadger.com"
-                                expected="_blank"
+                                target="_blank"
                                 >learn about badgers</a
                             >
                         </li>
@@ -46,6 +46,50 @@
                     debugger;
 
                     // write me! (... without using cloneNode, that's kind of cheating)
+
+                    // create h2
+                    const header = document.createElement('h2');
+                    header.innerText = 'a list of things';
+
+                    // create ul
+                    const list = document.createElement('ul');
+                    list.setAttribute('start', '0');
+
+                    const data = [
+                        {
+                            text: 'robots',
+                        },
+                        {
+                            text: 'solar systems',
+                        },
+                        {
+                            href: 'https://www.badgerbadgerbadger.com',
+                            target: '_blank',
+                            title: 'learn about badgers',
+                        },
+                        {
+                            text: 'oil',
+                        },
+                    ];
+
+                    data.forEach((liData) => {
+                        if (liData.text) {
+                            const li = document.createElement('li');
+                            li.innerText = liData.text;
+                            list.append(li);
+                        } else {
+                            const liAEl = document.createElement('li');
+                            const link = document.createElement('a');
+                            link.href = liData.href;
+                            link.target = liData.target;
+                            link.innerText = liData.title;
+                            liAEl.append(link);
+                            list.append(liAEl);
+                        }
+                    });
+
+                    const parent = document.getElementById('actual');
+                    parent.append(header, list);
                 </script>
             </div>
 

@@ -45,6 +45,17 @@
                     debugger;
 
                     // write me! (... without using cloneNode, that's kind of cheating)
+
+                    // Add title
+                    const header = document.createElement('h1');
+                    header.innerText = 'a list of things';
+
+                    const actual = document.getElementById('actual');
+                    actual.insertBefore(header, actual.firstChild);
+
+                    // change the second li
+                    const liAll = document.querySelectorAll('#actual li');
+                    liAll[1].innerText = 'solar systems';
                 </script>
             </div>
 
