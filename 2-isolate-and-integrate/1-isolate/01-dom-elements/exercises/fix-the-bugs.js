@@ -1,6 +1,6 @@
 'use strict';
 
-const element = document.createElement('buton');
+const element = document.createElement('button');
 element.innerHTML = 'go home';
 element.class = 'large-btn';
 
