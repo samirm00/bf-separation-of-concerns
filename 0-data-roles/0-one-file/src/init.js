@@ -1,4 +1,4 @@
-debugger; // once when the program is initialized
+//debugger; // once when the program is initialized
 
 const state = {
     currentNumber: 0,
@@ -8,8 +8,7 @@ const state = {
 // ==== the user can add a new number to state ====
 
 document.getElementById('next-number').addEventListener('change', (e) => {
-    debugger; // each time the user changes the 'next-number' input
-
+    //debugger; // each time the user changes the 'next-number' input
     // --- read the user's input ---
     const inputValue = e.target.value;
     const nextNumber = Number(inputValue);
@@ -31,8 +30,7 @@ document.getElementById('next-number').addEventListener('change', (e) => {
 // ==== the user can change the input's value ====
 
 document.getElementById('number-history').addEventListener('mouseover', (e) => {
-    debugger; // each time the user moves the mouse over 'number-history'
-
+    // debugger; // each time the user moves the mouse over 'number-history'
     // only do something if the user is hovering over an LI child
     if (e.target.nodeName !== 'LI') {
         return;
