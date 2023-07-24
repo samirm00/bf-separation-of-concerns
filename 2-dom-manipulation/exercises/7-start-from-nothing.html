@@ -73,19 +73,17 @@
                     ];
 
                     data.forEach((liData) => {
+                        const li = document.createElement('li');
                         if (liData.text) {
-                            const li = document.createElement('li');
                             li.innerText = liData.text;
-                            list.append(li);
                         } else {
-                            const liAEl = document.createElement('li');
                             const link = document.createElement('a');
                             link.href = liData.href;
                             link.target = liData.target;
                             link.innerText = liData.title;
-                            liAEl.append(link);
-                            list.append(liAEl);
+                            li.append(link);
                         }
+                        list.append(li);
                     });
 
                     const parent = document.getElementById('actual');
