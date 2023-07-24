@@ -1,7 +1,7 @@
 'use strict';
 
 const element = document.createElement('buton');
-element.innerHtml = 'go home';
+element.innerHTML = 'go home';
 element.class = 'large-btn';
 
 // the assertions are correct!  change the code above to pass them
