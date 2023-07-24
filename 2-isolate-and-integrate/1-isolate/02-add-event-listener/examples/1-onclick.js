@@ -18,12 +18,13 @@ const buttonEl = document.createElement('button');
 
 // write an event handler
 const greetingHandler = () => {
-    const userName = prompt('what is your name?');
-    if (userName === null) {
-        return;
-    }
-    const greeting = `hello ${userName}`;
-    alert(greeting);
+  debugger;
+  const userName = prompt('what is your name?');
+  if (userName === null) {
+    return;
+  }
+  const greeting = `hello ${userName}`;
+  alert(greeting);
 };
 
 // set the .onclick property
@@ -47,7 +48,7 @@ buttonEl.dispatchEvent(clickEvent);
 // -- with .onclick you can only add a single click handler --
 //  assigning a different handler will replace the first one
 const secondHandler = () => {
-    alert('second handler!');
+  alert('second handler!');
 };
 
 buttonEl.onclick = secondHandler;

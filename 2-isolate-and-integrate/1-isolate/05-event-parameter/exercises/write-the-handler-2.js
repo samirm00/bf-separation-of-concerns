@@ -3,8 +3,12 @@
 const headerEl = document.createElement('h1');
 console.log('initial header:', headerEl.cloneNode(true));
 
-const changeHeaderTextHandler = (event) => {
-    // take input from a user and set it as the target's innerHTML
+const changeHeaderTextHandler = (e) => {
+  // take input from a user and set it as the target's innerHTML
+  const userInput = prompt('Please enter something! :');
+  if (userInput) {
+    e.target.innerHTML = userInput;
+  }
 };
 
 headerEl.addEventListener('click', changeHeaderTextHandler);
