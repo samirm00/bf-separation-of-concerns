@@ -31,9 +31,9 @@
 
         <script id="utils"></script>
         <script id="handlers">
-            const handler = (event) => {
+            const handler = (e) => {
                 debugger;
-                const input = event.target.value;
+                const input = e.target.value;
                 const reversedUppercase = input
                     .toUpperCase()
                     .split('')
@@ -44,7 +44,9 @@
             };
         </script>
         <script id="listeners">
-            document.getElementById('input').addEventListener('keyup', handler);
+            document.getElementById('input').addEventListener('keyup', (e) => {
+                handler(e);
+            });
         </script>
     </body>
 </html>

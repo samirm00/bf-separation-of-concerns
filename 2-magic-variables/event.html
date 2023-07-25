@@ -17,22 +17,26 @@
         </script>
 
         <script id="handlers">
-            const magicEvent = () => {
-                console.log('magic:', event);
+            const magicEvent = (e) => {
+                console.log('magic:', e);
             };
 
-            const parameterEvent = (event) => {
-                console.log('parameter:', event);
+            const parameterEvent = (e) => {
+                console.log('parameter:', e);
             };
         </script>
         <script id="listeners">
             document
                 .getElementById('click-it')
-                .addEventListener('click', magicEvent);
+                .addEventListener('click', (e) => {
+                    magicEvent(e);
+                });
 
             document
                 .getElementById('click-it')
-                .addEventListener('click', parameterEvent);
+                .addEventListener('click', (e) => {
+                    parameterEvent(e);
+                });
         </script>
     </body>
 </html>

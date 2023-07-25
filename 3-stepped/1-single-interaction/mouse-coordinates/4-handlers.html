@@ -32,10 +32,10 @@
         <script id="utils"></script>
         <script id="handlers">
             // read input, process the data, communicate results
-            const handler = (event) => {
+            const handler = (e) => {
                 debugger;
-                const xValue = event.pageX;
-                const yValue = event.pageY;
+                const xValue = e.pageX;
+                const yValue = e.pageY;
                 const formattedCoordinates = 'X: ' + xValue + '\nY: ' + yValue;
                 document.getElementById('mouse-position').innerHTML =
                     formattedCoordinates;
