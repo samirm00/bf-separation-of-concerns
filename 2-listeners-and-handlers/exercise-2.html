@@ -28,68 +28,76 @@
 
     <body>
         <section id="user-interface">
-            <div id="_" class="second-class">3</div>
-            <div id="second" class="_-class">_</div>
-            <div id="third" class="first-_">2</div>
+            <div id="first" class="second-class">3</div>
+            <div id="second" class="third-class">1</div>
+            <div id="third" class="first-class">2</div>
         </section>
 
         <script id="handlers">
             'use strict';
 
-            const firstHandler = (event) => {
+            const firstHandler = (e) => {
                 debugger;
                 console.assert(
-                    event.target.innerHTML === '_',
+                    e.target.innerHTML === '3',
                     'first: target.innerHTML',
                 );
                 console.assert(
-                    event.target.nodeName === '_',
+                    e.target.nodeName === 'DIV',
                     'first: target.nodeName',
                 );
-                console.assert(event.target.id === 'first', 'first: target.id');
-                console.assert(event.type === 'click', 'first: event.type');
+                console.assert(e.target.id === 'first', 'first: target.id');
+                console.assert(e.type === 'click', 'first: event.type');
             };
 
-            const _ = (event) => {
+            const secondHandler = (e) => {
                 debugger;
-                console.assert(event.target.id === '2', 'second: target.id');
+                console.assert(e.target.id === 'second', 'second: target.id');
                 console.assert(
-                    event.target.className === 'third-class',
+                    e.target.className === 'third-class',
                     '2: target.className',
                 );
                 console.assert(
-                    event.target.innerHTML === '1',
+                    e.target.innerHTML === '1',
                     '2: target.innerHTML',
                 );
-                console.assert(event.type === 'mouseover', '2: event.type');
+                console.assert(e.type === 'mouseover', '2: event.type');
             };
 
-            const thirdHandler = (event) => {
+            const thirdHandler = (e) => {
                 debugger;
                 console.assert(
-                    event.target.className === '_',
+                    e.target.className === 'first-class',
                     'third: target.className',
                 );
                 console.assert(
-                    event.target._ === 'third',
+                    e.target.id === 'third',
                     'third: target.className',
                 );
                 console.assert(
-                    event.target.innerHTML === '_',
+                    e.target.innerHTML === '2',
                     'third: target.innerHTML',
                 );
-                console.assert(event.type === '_', 'second: event.type');
+                console.assert(e.type === 'mouseover', 'second: event.type');
             };
         </script>
 
         <script id="listeners">
             document
                 .getElementById('first')
-                .addEventListener('mouseover', firstHandler);
+                .addEventListener('mouseover', (e) => {
+                    firstHandler(e);
+                });
             document
                 .getElementById('second')
-                .addEventListener('_', secondHandler);
-            document.getElementById('_').addEventListener('mouseover', _);
+                .addEventListener('mouseover', (e) => {
+                    secondHandler(e);
+                });
+            document
+                .getElementById('third')
+                .addEventListener('mouseover', (e) => {
+                    thirdHandler(e);
+                });
         </script>
     </body>
 </html>

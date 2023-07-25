@@ -145,18 +145,18 @@
         </main>
 
         <script id="handlers">
-            const toggleColorHandler = (event) => {
+            const toggleColorHandler = (e) => {
                 debugger;
 
-                const target = event.target;
-                if (target.nodeName !== '_') {
+                const target = e.target;
+                if (target.nodeName !== 'BUTTON') {
                     return;
                 }
 
-                if (event.type === '_') {
+                if (e.type === 'focusin') {
                     target.style.backgroundColor = 'black';
                     target.style.color = 'white';
-                } else if (event.type === '_') {
+                } else if (e.type === 'focusout') {
                     target.style.backgroundColor = 'white';
                     target.style.color = 'black';
                 }
@@ -167,11 +167,15 @@
             // this works! no need to change it
             document
                 .getElementById('the-board')
-                .addEventListener('focusin', toggleColorHandler);
+                .addEventListener('focusin', (e) => {
+                    toggleColorHandler(e);
+                });
 
             document
                 .getElementById('the-board')
-                .addEventListener('focusout', toggleColorHandler);
+                .addEventListener('focusout', (e) => {
+                    toggleColorHandler(e);
+                });
 
             // trick question: why would 'blur' and 'focus' not work?
             //  https://developer.mozilla.org/en-US/docs/Web/API/Element/blur_event

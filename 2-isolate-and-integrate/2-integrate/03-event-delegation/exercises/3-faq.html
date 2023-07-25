@@ -28,34 +28,34 @@
         </main>
 
         <script id="handlers">
-            const toggleFAQsHandler = (event) => {
+            const toggleFAQsHandler = (e) => {
                 debugger;
 
-                const target = _;
-                if (target._ !== 'SUMMARY') {
+                const target = e.target;
+                if (target.nodeName !== 'SUMMARY') {
                     return;
                 }
 
-                const sectionEl = event._;
-                const sectionChildren = _;
+                const sectionEl = e.target.parentElement;
+                const sectionChildren = sectionEl.children;
 
                 for (const details of sectionChildren) {
-                    const summary = details.children[_];
-                    const wasNotClicked = summary !== _;
+                    const summary = details.children[details];
+                    const wasNotClicked = summary !== target;
 
-                    const isOpen = details.open === _;
+                    const isOpen = details.open === true;
 
                     if (wasNotClicked && isOpen) {
-                        details.open = _;
+                        details.open = false;
                     }
                 }
             };
         </script>
 
         <script id="listeners">
-            document
-                .getElementById('faqs')
-                .addEventListener('click', toggleFAQsHandler);
+            document.getElementById('faqs').addEventListener('click', (e) => {
+                toggleFAQsHandler(e);
+            });
         </script>
 
         <!--

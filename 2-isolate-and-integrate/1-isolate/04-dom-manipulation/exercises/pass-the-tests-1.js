@@ -1,37 +1,37 @@
 'use strict';
 
-const divEl = document.createElement('ul');
-divEl.innerHTML = `
+const ulEl = document.createElement('ul');
+ulEl.innerHTML = `
   <p></p>
   <section></section>
   <h1></h1>
 `;
-console.log(divEl.nodeName + ' (before)', divEl.cloneNode(true));
+console.log(ulEl.nodeName + ' (before)', ulEl.cloneNode(true));
 
 // --- write some code ---
 //  replace the <p>
 const navEl = document.createElement('nav');
-const pEl = divEl.getElementsByTagName('p')[0];
-divEl.replaceChild(navEl, pEl);
+const pEl = ulEl.getElementsByTagName('p')[0];
+ulEl.replaceChild(navEl, pEl);
 
 //  insert something before the <section>
 const header2El = document.createElement('h2');
-const sectionEl = divEl.getElementsByTagName('section')[0];
-divEl.insertBefore(header2El, sectionEl);
+const sectionEl = ulEl.getElementsByTagName('section')[0];
+ulEl.insertBefore(header2El, sectionEl);
 //  remove the <h1>
-const header1El = divEl.getElementsByTagName('h1')[0];
-divEl.removeChild(header1El);
+const header1El = ulEl.getElementsByTagName('h1')[0];
+ulEl.removeChild(header1El);
 //  append something to the end
 const newPEl = document.createElement('p');
-divEl.appendChild(newPEl);
+ulEl.appendChild(newPEl);
 
 // --- --- --- --- --- ---
 
-console.log(divEl.nodeName + ' (after)', divEl.cloneNode(true));
+console.log(ulEl.nodeName + ' (after)', ulEl.cloneNode(true));
 
-console.assert(divEl.childElementCount === 4, 'Test: .childElementCount');
+console.assert(ulEl.childElementCount === 4, 'Test: .childElementCount');
 
-console.assert(divEl.children[0].nodeName === 'NAV', 'Test: 1st child');
-console.assert(divEl.children[1].nodeName === 'H2', 'Test: 2nd child');
-console.assert(divEl.children[2].nodeName === 'SECTION', 'Test: 3rd child');
-console.assert(divEl.children[3].nodeName === 'P', 'Test: 4th child');
+console.assert(ulEl.children[0].nodeName === 'NAV', 'Test: 1st child');
+console.assert(ulEl.children[1].nodeName === 'H2', 'Test: 2nd child');
+console.assert(ulEl.children[2].nodeName === 'SECTION', 'Test: 3rd child');
+console.assert(ulEl.children[3].nodeName === 'P', 'Test: 4th child');

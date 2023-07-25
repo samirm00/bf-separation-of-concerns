@@ -7,6 +7,7 @@
  * @returns {string} an HTML <ul> string with all even numbers
  */
 const renderEvens = (numbers, id) => {
+  debugger;
   let listItems = '';
   for (const num of numbers) {
     if (num % 2 === 0) {

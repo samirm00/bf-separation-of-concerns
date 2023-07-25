@@ -15,12 +15,12 @@
 const buttonEl = document.createElement('button');
 
 // write an event handler
-const demoHandler = (event) => {
+const demoHandler = (e) => {
     // the same event from parent scope, passed by reference
-    const eventType = event.type;
+    const eventType = e.type;
 
     // the same element as buttonEl, passed by reference
-    const target = event.target;
+    const target = e.target;
     const nodeName = target.nodeName;
 
     const message = `you ${eventType}ed a ${nodeName}`;
@@ -29,8 +29,12 @@ const demoHandler = (event) => {
 
 // add two event listeners to the button
 //  different events triggering the same handler
-buttonEl.addEventListener('click', demoHandler);
-buttonEl.addEventListener('mouseover', demoHandler);
+buttonEl.addEventListener('click', (e) => {
+    demoHandler(e);
+});
+buttonEl.addEventListener('mouseover', () => {
+    demoHandler(e);
+});
 
 // you can simulate a user clicking the button
 // this is a more advanced technique

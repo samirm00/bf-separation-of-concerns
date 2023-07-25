@@ -15,81 +15,89 @@
     <body>
         <section id="user-interface">
             <form class="inputs" id="inputs">
-                <select name="_" id="selector">
+                <select name="type" id="selector">
                     <option value="rock">rock</option>
                     <option value="paper">paper</option>
                     <option value="scissors">scissors</option>
                 </select>
-                <input type="button" id="_" name="clickable" value="a button" />
+                <input
+                    type="button"
+                    id="user-action"
+                    name="clickable"
+                    value="a button"
+                />
             </form>
         </section>
 
         <script id="handlers">
             'use strict';
 
-            const first = (event) => {
+            const first = (e) => {
                 debugger;
+                console.assert(e.target.id === 'selector', 'first: target.id');
                 console.assert(
-                    event.target._ === 'selector',
-                    'first: target.id',
-                );
-                console.assert(
-                    event.target.nodeName === 'SELECT',
+                    e.target.nodeName === 'SELECT',
                     'first: target.nodeName',
                 );
                 console.assert(
-                    event.target.form.id === 'inputs',
+                    e.target.form.id === 'inputs',
                     'first: target.form.id',
                 );
                 console.assert(
-                    event.target.childElementCount === _,
+                    e.target.childElementCount === 3,
                     'third: target.childElementCount',
                 );
             };
 
-            const second = (event) => {
+            const second = (e) => {
                 debugger;
-                console.assert(event._ === 'blur', 'second: event.type');
+                console.assert(e.type === 'blur', 'second: e.type');
+                console.assert(e.target.id === 'selector', 'second: target.id');
                 console.assert(
-                    event.target.id === 'selector',
-                    'second: target.id',
-                );
-                console.assert(
-                    event.target.nodeName === '_',
+                    e.target.nodeName === 'SELECT',
                     'second: target.nodeName',
                 );
+                console.assert(e.target.name === 'type', 'second: target.name');
                 console.assert(
-                    event.target.name === 'type',
-                    'second: target.name',
-                );
-                console.assert(
-                    (event.target.form.clickable.value = 'a button'),
+                    (e.target.form.clickable.value = 'a button'),
                     'second: target.form.clickable.value',
                 );
             };
 
-            const third = (event) => {
+            const third = (e) => {
                 debugger;
-                console.assert(event.type === 'click', 'third: event.type');
+                console.assert(e.type === 'click', 'third: e.type');
                 console.assert(
-                    event.target.id === 'user-action',
+                    e.target.id === 'user-action',
                     'third: target.id',
                 );
                 console.assert(
-                    event.target.name === 'clickable',
+                    e.target.name === 'clickable',
                     'third: target.name',
                 );
                 console.assert(
-                    event.target.nodeName === '_',
+                    e.target.nodeName === 'INPUT',
                     'third: target.nodeName',
                 );
             };
         </script>
 
         <script id="listeners">
-            document.getElementById('_').addEventListener('change', _);
-            document.getElementById('_').addEventListener('blur', _);
-            document.getElementById('_').addEventListener('click', _);
+            document
+                .getElementById('selector')
+                .addEventListener('change', (e) => {
+                    first(e);
+                });
+            document
+                .getElementById('selector')
+                .addEventListener('blur', (e) => {
+                    second(e);
+                });
+            document
+                .getElementById('user-action')
+                .addEventListener('click', (e) => {
+                    third(e);
+                });
         </script>
     </body>
 </html>
