@@ -1,4 +1,8 @@
-import { header } from './header.js';
+/**
+ * @jest-environment jsdom
+ */
+
+import header from './header.js';
 
 describe('header: renders DOM headers of different levels', () => {
     describe('an H3 with text: "hello"', () => {

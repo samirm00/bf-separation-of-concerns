@@ -1,4 +1,8 @@
-import { info } from './info.js';
+/**
+ * @jest-environment jsdom
+ */
+
+import info from './info.js';
 
 describe('info: renders some info under a caption', () => {
     describe('several colors, no id', () => {

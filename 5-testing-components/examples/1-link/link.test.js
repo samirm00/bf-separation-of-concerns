@@ -1,4 +1,8 @@
-import { link } from './link.js';
+/**
+ * @jest-environment jsdom
+ */
+
+import link from './link.js';
 
 describe('link: renders a DOM anchor element', () => {
     describe('open google in a new tab (default target)', () => {

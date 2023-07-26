@@ -6,7 +6,7 @@
  * @param {string} [id=''] - the element's id
  * @returns {HTMLDetailsElement}
  */
-export const info = (caption, mainText, id = '') => {
+ const info = (caption, mainText, id = '') => {
     const detailsEl = document.createElement('_');
     _;
 
@@ -20,3 +20,5 @@ export const info = (caption, mainText, id = '') => {
 
     return detailsEl;
 };
+
+export default info;

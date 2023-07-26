@@ -8,7 +8,7 @@
  *  defaults to '_blank'
  * @returns {HTMLAnchorElement} a rendered anchor element
  */
-export const link = (text, url, target = '_blank') => {
+const link = (text, url, target = '_blank') => {
     const aEl = document.createElement('a');
     aEl.href = url;
     aEl.target = target;
@@ -16,3 +16,5 @@ export const link = (text, url, target = '_blank') => {
 
     return aEl;
 };
+
+export default link;

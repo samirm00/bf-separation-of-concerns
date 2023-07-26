@@ -6,7 +6,7 @@
  * @param {string} text - the text to render into the header
  * @returns {HTMLHeadingElement} a rendered header element
  */
-export const header = (level, text) => {
+const header = (level, text) => {
     if (level < 1 || 6 < level) {
         throw new RangeError('level must be in range: 1 -> 6');
     }
@@ -15,3 +15,5 @@ export const header = (level, text) => {
     headerEl.innerHTML = text;
     return headerEl;
 };
+
+export default header;
