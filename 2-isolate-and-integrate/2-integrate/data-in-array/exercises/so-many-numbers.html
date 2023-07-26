@@ -157,9 +157,11 @@
             document
                 .getElementById('divisible-by')
                 .addEventListener('click', divisibleByHandler);
-            document.getElementById('display').addEventListener('click', () => {
-                displayNumbersHandler();
-            });
+            document
+                .getElementById('display')
+                .addEventListener('click', (e, arr, message) => {
+                    displayNumbersHandler(arr, message);
+                });
             document
                 .getElementById('reset')
                 .addEventListener('click', resetNumbersHandler);
