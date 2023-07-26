@@ -25,9 +25,9 @@
         </script>
 
         <script id="handlers">
-            const preventDefaultHandler = (event) => {
-                event.preventDefault();
-                console.log('prevented default:', event);
+            const preventDefaultHandler = (e) => {
+                e.preventDefault();
+                console.log('prevented default:', e);
             };
 
             const openCloseHandler = () => {
@@ -92,7 +92,9 @@
                 detailsEl.appendChild(summaryEl);
                 detailsEl.appendChild(pEl);
 
-                detailsEl.addEventListener('click', preventDefaultHandler);
+                detailsEl.addEventListener('click', (e) => {
+                    preventDefaultHandler(e);
+                });
 
                 return detailsEl;
             };

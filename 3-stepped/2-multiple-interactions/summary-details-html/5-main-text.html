@@ -28,9 +28,9 @@
         </script>
 
         <script id="handlers">
-            const preventDefaultHandler = (event) => {
-                event.preventDefault();
-                console.log('prevented default:', event);
+            const preventDefaultHandler = (e) => {
+                e.preventDefault();
+                console.log('prevented default:', e);
             };
 
             const openCloseHandler = () => {
@@ -80,7 +80,9 @@
         <script id="listeners">
             document
                 .getElementById('component')
-                .addEventListener('click', preventDefaultHandler);
+                .addEventListener('click', (e) => {
+                    preventDefaultHandler(e);
+                });
 
             document
                 .getElementById('toggle-is-open')

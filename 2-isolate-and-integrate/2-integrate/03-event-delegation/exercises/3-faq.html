@@ -39,16 +39,14 @@
                 const sectionEl = e.target.parentElement;
                 const sectionChildren = sectionEl.children;
 
-                for (const details of sectionChildren) {
-                    const summary = details.children[details];
-                    const wasNotClicked = summary !== target;
-
-                    const isOpen = details.open === true;
-
-                    if (wasNotClicked && isOpen) {
-                        details.open = false;
+                Array.from(sectionChildren).forEach((child) => {
+                    if (child.nodeName === 'SUMMARY') {
+                        const isOpen = child.open === true;
+                        if (isOpen) {
+                            child.open = false;
+                        }
                     }
-                }
+                });
             };
         </script>
 
