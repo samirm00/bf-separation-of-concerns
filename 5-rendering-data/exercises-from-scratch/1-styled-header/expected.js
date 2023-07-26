@@ -1,5 +1,4 @@
 'use strict';
-
 const a0_0x7996 = ['createElement', 'className'];
 (function (_0x2eb433, _0x79968f) {
     const _0x46b569 = function (_0x5669b5) {
