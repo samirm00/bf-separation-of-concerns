@@ -20,7 +20,6 @@ const camelCaseToTitleCase = (camelCaseString) => {
 };
 
 const actual = (obj) => {
-    // dl
     const dl = document.createElement('dl');
 
     for (const key in obj) {
