@@ -2,7 +2,7 @@
  * @jest-environment jsdom
  */
 
-import { list } from './4-b-list-reduce.js';
+import list from './list.js';
 
 describe('list: renders a list from an array of strings', () => {
     describe('a linked button element opening to google', () => {

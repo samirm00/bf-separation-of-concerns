@@ -5,7 +5,7 @@
  * @param {number} startNum - starting index for the list
  * @returns {HTMLOListElement} the rendered list
  */
-export const list = (arr, startNum) => {
+const list = (arr, startNum) => {
     const renderLi = (item) => {
         const liEl = document.createElement('li');
         liEl.innerText = item;
@@ -23,3 +23,5 @@ export const list = (arr, startNum) => {
 
     return olEl;
 };
+
+export default list;

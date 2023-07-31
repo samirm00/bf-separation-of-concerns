@@ -1,7 +1,28 @@
 /**
- * renders a table from a 2D array of arrays
- * each entry in the nested arrays becomes the text in a cell
- * @param {Array[]} arrayOfArrays - a 2D array representing the game board
+ * Renders a table from a 2D array of arrays
+ * Each entry in the nested arrays becomes the text in a cell
+ * @param {Array[]} boardData - a 2D array representing the game board
  * @returns {HTMLTableElement} the rendered game board
  */
-export const gameBoard = (arrayOfArrays) => {};
+
+function gameBoard(boardData) {
+    let table = document.createElement('table');
+
+    boardData.forEach(function (row) {
+        let tr = document.createElement('tr');
+
+        row.forEach(function (cell) {
+            let td = document.createElement('td');
+
+            td.innerText = cell;
+
+            tr.appendChild(td);
+        });
+
+        table.appendChild(tr);
+    });
+
+    return table;
+}
+
+export default gameBoard;

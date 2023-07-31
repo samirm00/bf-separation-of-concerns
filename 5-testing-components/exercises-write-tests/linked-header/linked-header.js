@@ -8,7 +8,7 @@
  *  defaults to '_blank'
  * @returns {HTMLHeadingElement} a linked heading
  */
-export const linkedHeader = (text, link, target = '_blank') => {
+const linkedHeader = (text, link, target = '_blank') => {
     const h2El = document.createElement('h2');
 
     const aEl = document.createElement('a');
@@ -19,3 +19,5 @@ export const linkedHeader = (text, link, target = '_blank') => {
 
     return h2El;
 };
+
+export default linkedHeader;

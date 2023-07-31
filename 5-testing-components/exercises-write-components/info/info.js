@@ -6,17 +6,17 @@
  * @param {string} [id=''] - the element's id
  * @returns {HTMLDetailsElement}
  */
- const info = (caption, mainText, id = '') => {
-    const detailsEl = document.createElement('_');
-    _;
+const info = (caption, mainText, id = '') => {
+    const detailsEl = document.createElement('details');
+    detailsEl.id = id;
 
-    const summaryEl = document.createElement('_');
-    _;
-    _;
+    const summaryEl = document.createElement('summary');
+    summaryEl.innerHTML = caption;
+    detailsEl.append(summaryEl);
 
-    const pEl = document.createElement('_');
-    _;
-    _;
+    const pEl = document.createElement('p');
+    pEl.innerHTML = mainText;
+    detailsEl.append(pEl);
 
     return detailsEl;
 };

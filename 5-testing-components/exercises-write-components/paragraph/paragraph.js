@@ -5,6 +5,16 @@
  * @param {string[]} [classList=[]] - an array of classes to apply
  * @returns {HTMLParagraphElement} a rendered paragraph element
  */
-export const paragraph = (text, classList = []) => {
-    // see the last example for a hint
+const paragraph = (text, classList = []) => {
+    const paragraphEl = document.createElement('p');
+    paragraphEl.innerHTML = text;
+
+    // check if there are classList
+    classList.forEach((className) => {
+        paragraphEl.classList.add(className);
+    });
+
+    return paragraphEl;
 };
+
+export default paragraph;

@@ -2,7 +2,7 @@
  * @jest-environment jsdom
  */
 
-import { list } from './4-a-list-loop.js';
+import list from './list.js';
 
 describe('list: renders a list from an array of strings', () => {
     describe('an ordered list of three items', () => {

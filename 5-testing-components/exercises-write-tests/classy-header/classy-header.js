@@ -8,7 +8,7 @@
  * @param {string[]} [classList=[]] - an array of class names
  * @returns {HTMLHeadingElement} a rendered header element
  */
-export const classyHeader = (level, text, classList = []) => {
+const classyHeader = (level, text, classList = []) => {
     if (level < 1 || 6 < level) {
         throw new RangeError('level must be in range: 1 -> 6');
     }
@@ -20,3 +20,5 @@ export const classyHeader = (level, text, classList = []) => {
     }
     return headerEl;
 };
+
+export default classyHeader;
