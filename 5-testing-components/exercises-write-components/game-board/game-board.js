@@ -8,10 +8,10 @@
 function gameBoard(boardData) {
     let table = document.createElement('table');
 
-    boardData.forEach(function (row) {
+    boardData.forEach((row) => {
         let tr = document.createElement('tr');
 
-        row.forEach(function (cell) {
+        row.forEach((cell) => {
             let td = document.createElement('td');
 
             td.innerText = cell;

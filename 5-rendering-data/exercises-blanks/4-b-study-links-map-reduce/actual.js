@@ -1,6 +1,7 @@
 'use strict';
 
 const actual = (linksData) => {
+    debugger;
     const divEl = document.createElement('div');
 
     const h3El = document.createElement('h3');
