@@ -95,6 +95,3 @@ describe('paragraph: renders a paragraph with optional styling', () => {
         });
     });
 });
-
-
-
