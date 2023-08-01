@@ -7,15 +7,15 @@
  * @returns {string} an HTML <ul> string with all even numbers
  */
 const renderEvens = (numbers, id) => {
-  debugger;
-  let listItems = '';
-  for (const num of numbers) {
-    if (num % 2 === 0) {
-      listItems += `<li>${num}</li>`;
+    debugger;
+    let listItems = '';
+    for (const num of numbers) {
+        if (num % 2 === 0) {
+            listItems += `<li>${num}</li>`;
+        }
     }
-  }
-  const list = `<ul id="${id}">${listItems}</ul>`;
-  return list;
+    const list = `<ul id="${id}">${listItems}</ul>`;
+    return list;
 };
 
 const _1_emptyArray = renderEvens([], 'empty');
@@ -26,14 +26,14 @@ console.assert(_2_allOdd === '<ul id="all-odd"></ul>', 'Test 2: empty array');
 
 const _3_allEven = renderEvens([2, 4, 6], 'all-even');
 console.assert(
-  _3_allEven === '<ul id="all-even"><li>2</li><li>4</li><li>6</li></ul>',
-  'Test 3: empty array',
+    _3_allEven === '<ul id="all-even"><li>2</li><li>4</li><li>6</li></ul>',
+    'Test 3: empty array',
 );
 
 const _4_mixed = renderEvens([1, 2, 3, 4, 5], 'mixed');
 console.assert(
-  _4_mixed === '<ul id="mixed"><li>2</li><li>4</li></ul>',
-  'Test 4: empty array',
+    _4_mixed === '<ul id="mixed"><li>2</li><li>4</li></ul>',
+    'Test 4: empty array',
 );
 
 const divEl = document.createElement('div');
