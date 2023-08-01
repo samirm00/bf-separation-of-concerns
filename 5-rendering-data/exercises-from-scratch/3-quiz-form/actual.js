@@ -1,40 +1,41 @@
 'use strict';
 
 const actual = ({ question, answers, correct, selected }) => {
-  // form
-  const form = document.createElement('form');
+    // form
+    const form = document.createElement('form');
 
-  // question
-  const questionDom = document.createElement('p');
-  questionDom.innerText = question;
-  form.append(questionDom);
-  // answers
-  answers.forEach((answer, index) => {
-    // input
-    const input = document.createElement('input');
-    input.type = 'radio';
-    input.name = 'answers';
-    if (index === selected) {
-      input.checked = true;
-    }
+    // question
+    const questionDom = document.createElement('p');
+    questionDom.innerText = question;
+    form.append(questionDom);
 
-    // text
-    const text = document.createElement('text');
-    text.innerText = answer;
-    if (input.checked) {
-      if (index === correct) {
-        text.className = 'correct';
-        text.innerText = answer + ' √';
-      } else {
-        text.className = 'incorrect';
-        text.innerText = answer + ' ✖';
-      }
-    }
+    // answers
+    answers.forEach((answer, index) => {
+        // input
+        const input = document.createElement('input');
+        input.type = 'radio';
+        input.name = 'answers';
+        if (index === selected) {
+            input.checked = true;
+        }
 
-    // br
-    const br = document.createElement('br');
-    form.append(input, text, br);
-  });
+        // text
+        const text = document.createElement('text');
+        text.innerText = answer;
+        if (input.checked) {
+            if (index === correct) {
+                text.className = 'correct';
+                text.innerText = answer + ' √';
+            } else {
+                text.className = 'incorrect';
+                text.innerText = answer + ' ✖';
+            }
+        }
 
-  return form;
+        // br
+        const br = document.createElement('br');
+        form.append(input, text, br);
+    });
+
+    return form;
 };

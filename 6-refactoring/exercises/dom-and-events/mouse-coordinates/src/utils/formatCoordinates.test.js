@@ -1,4 +1,4 @@
-import { formatCoordinates } from './utils.js';
+import formatCoordinates from './formatCoordinates.js';
 
 describe('formatCoordinates: formats two numbers into a coordinates string', () => {
     it('positive numbers', () => {
