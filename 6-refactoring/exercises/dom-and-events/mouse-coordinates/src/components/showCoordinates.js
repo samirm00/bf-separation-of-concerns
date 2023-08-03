@@ -1,6 +1,6 @@
-const showCoordinates = (DomElement, value) => {
-    DomElement.innerHTML = value;
-    return DomElement;
+const showCoordinates = (domElement, value) => {
+    domElement.innerHTML = value;
+    return domElement;
 };
 
 export default showCoordinates;
