@@ -1,12 +1,31 @@
+/**
+ * @jest-environment jsdom
+ */
+
 import updateOutput from './updateOutput.js';
 
 describe('reverseAndUpper: reverses a string and upper-cases all the letters', () => {
-    const element = document.createElement('div');
-    it('"lower-case letters"', () => {
+    describe('test with div', () => {
+        const element = document.createElement('div');
         const actual = updateOutput(element, 'Hello');
-        expect(actual.i).toEqual(expected);
+
+        it('nodeName -> DIV', () => {
+            expect(actual.nodeName).toEqual('DIV');
+        });
+        it(' innerHTML -> Hello', () => {
+            expect(actual.innerHTML).toEqual('Hello');
+        });
     });
-    it('upper-case letters', () => {
-        expect(actual).toEqual(expected);
+
+    describe('test with h2', () => {
+        const element = document.createElement('h2');
+        const actual = updateOutput(element, 'Hello');
+
+        it('nodeName -> H2', () => {
+            expect(actual.nodeName).toEqual('H2');
+        });
+        it(' innerHTML -> Hello', () => {
+            expect(actual.innerHTML).toEqual('Hello');
+        });
     });
 });

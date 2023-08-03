@@ -7,4 +7,5 @@ const flipHandler = (e) => {
     const newValue = reverseAndUpper(value);
     updateOutput(dom.output, newValue);
 };
+
 export default flipHandler;

@@ -1,6 +1,6 @@
 const updateOutput = (element, value) => {
-    // render result for user
     element.innerHTML = value;
+    return element;
 };
 
 export default updateOutput;
